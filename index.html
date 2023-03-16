@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="uk">
     <head>
-        <title>Калькулятор теореми вієта</title>
+        <title>Калькулятор теореми Вієта</title>
         <meta http-equiv='cache-control' content='no-cache'> 
         <meta http-equiv='expires' content='0'> 
         <meta http-equiv='pragma' content='no-cache'>
         <meta charset="UTF-8">
-        <meta name="description" content="Калькулятор теореми вієта">
+        <meta name="description" content="Калькулятор теореми Вієта">
     </head>
     <body>
-        <h1>Калькулятор теореми вієта</h1>
-        <form action="/url">
-            <input type="text" name="a"> x^2
-            <input type="text" name="b"> x
-            <input type="text" name="c"> = 0
-            <p>Результат: 0</p>
-        </form>
+        <div id="calculator">
+            <div id="text-boxes">
+                <h1>Калькулятор теореми Вієта</h1>
+                <input type="text" id="a" value=1>
+                x<sup>2</sup> +
+                <input type="text" id="b"> x +
+                <input type="text" id="c"> = 0
+            </div>
+            <div id="result">
+                <h2>Результати розрахунків:</h2>
+                <p id="discriminator">Дискримінант: 0</p>
+                x<sub>1</sub>:
+                <input type="text" id="x1" readonly>
+                 x<sub>2</sub>:
+                <input type="text" id="x2" readonly>
+            </div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
-
-<script>
-    document.getElementsByName('a').value = 1
-</script>
