@@ -9,13 +9,16 @@
         <meta name="description" content="Калькулятор теореми вієта">
     </head>
     <body>
+        <h1>Калькулятор теореми вієта</h1>
         <form action="/url">
-            <p>Калькулятор теореми вієта</p>
-            <input type="number" name="x1"> x^2
-            <input type="number" name="x2"> x
-            <input type="number" name="x2"> = 0
-            <input type="button" value="Підрахувати"><br>
-            <p>Результат: 666</p>
+            <input type="text" name="a"> x^2
+            <input type="text" name="b"> x
+            <input type="text" name="c"> = 0
+            <p>Результат: 0</p>
         </form>
     </body>
 </html>
+
+<script>
+    document.getElementsByName('a').value = 1
+</script>
