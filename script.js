@@ -1,34 +1,31 @@
-<!DOCTYPE html>
-<html lang="uk">
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Калькулятор теореми Вієта</title>
-        <meta http-equiv='cache-control' content='no-cache'> 
-        <meta http-equiv='expires' content='0'> 
-        <meta http-equiv='pragma' content='no-cache'>
-        <meta name="description" content="Калькулятор теореми Вієта">
-    </head>
-    <body>
-        <div id="calculator">
-            <div id="text-boxes">
-                <h1>Калькулятор теореми Вієта</h1>
-                <input type="text" id="a" value=1>
-                <span>x<sub>1</sub>+</span>
-                <input type="text" id="b">
-                <span>x<sub>2</sub>+</span>
-                <input type="text" id="c">
-                <span>= 0</span>
-            </div>
-            <div id="result">
-                <h2>Результати розрахунків:</h2>
-                <span id="discriminator">Дискримінант: 0</span>
-                <br>
-                <span>x<sub>1</sub>:</span>
-                <input type="text" id="x1" readonly>
-                <span>x<sub>2</sub>:</span>
-                <input type="text" id="x2" readonly>
-            </div>
-        </div>
-        <script src="script.js"></script>
-    </body>
-</html>
+const inputs = {
+    a: document.getElementById('a'),
+    b: document.getElementById('b'),
+    c: document.getElementById('c')
+};
+
+const x1 = document.getElementById('x1')
+const x2 = document.getElementById('x2')
+const discriminator = document.getElementById('discriminator')
+
+function inputChanged(){
+    const values = {
+        aValue: document.getElementById('a').value,
+        bValue: document.getElementById('b').value,
+        cValue: document.getElementById('c').value
+    };
+    
+    const sum = -values.bValue / values.aValue
+    const mul = values.cValue / values.aValue
+    const D = values.bValue ** 2 - 4 * values.aValue * values.cValue
+    const firstX = (-values.bValue + Math.sqrt(D)) / (2 * values.aValue)
+    const secondX = (-values.bValue - Math.sqrt(D)) / ( 2 * values.aValue)
+
+    x1.value = firstX
+    x2.value = secondX
+    discriminator.textContent = "Дискримінант: "+D
+}
+
+inputs.a.addEventListener('input', inputChanged);
+inputs.b.addEventListener('input', inputChanged);
+inputs.c.addEventListener('input', inputChanged);
