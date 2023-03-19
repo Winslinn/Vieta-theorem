@@ -7,9 +7,21 @@ span {
 }
 
 h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-175%);
+    width: max-content;
     color: white;
 }
 
 h2 {
     color: white;
+}
+
+.calculator {
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
