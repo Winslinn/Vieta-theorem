@@ -17,7 +17,7 @@ h1 {
 h2 {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-115%);
+    transform: translate(-50%,-200%);
     width: max-content;
     color: white;
 }
@@ -33,6 +33,6 @@ h2 {
 .result {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,100%);
+    transform: translate(-50%,250%);
     width: max-content;
 }
